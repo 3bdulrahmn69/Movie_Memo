@@ -79,4 +79,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **GitHub** - For the hosting and version control platform.
 - **VS Code** - For the powerful and customizable code editor.
 - **Chrome** - For the fast and modern web browser.
-- **Vercel** - For the cloud platform for static sites and serverless functions.
+- **Netlify** - For the continuous deployment and hosting platform.
