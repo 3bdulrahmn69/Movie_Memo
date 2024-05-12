@@ -1,6 +1,6 @@
-# Movie Memo
+# My Watched Movies
 
-Welcome to **MovieMemo**, a dynamic web application designed for movie enthusiasts to create and manage their personal watchlists. Originally inspired by Jonas Udemy's course on React Hooks under the name "usePopcorn", MovieMemo extends the basic functionalities with a redesigned user interface and additional features, leveraging the powerful OMDB API to fetch detailed movie information.
+Welcome to **My Watched Movies**, a dynamic web application designed for movie enthusiasts to create and manage their personal watchlists. Originally inspired by Jonas Udemy's course on React Hooks under the name "usePopcorn", My Watched Movies extends the basic functionalities with a redesigned user interface and additional features, leveraging the powerful OMDB API to fetch detailed movie information.
 
 ## Features
 
@@ -22,15 +22,15 @@ Before you begin, ensure you have the following installed:
 
 ### Installing
 
-To get MovieMemo running locally, follow these simple steps:
+To get My Watched Movies running locally, follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/3bdulrahmn69/movie_memo
+   git clone https://github.com/3bdulrahmn69/my_watched_movies
    ```
 2. Navigate to the project directory:
    ```bash
-   cd movie_memo
+   cd my_watched_movies
    ```
 3. Install the required dependencies:
    ```bash
