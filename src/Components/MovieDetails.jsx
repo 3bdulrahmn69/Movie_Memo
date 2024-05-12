@@ -60,7 +60,7 @@ const MovieDetails = ({
     }
 
     return () => {
-      document.title = 'Movie Memo';
+      document.title = 'My Watched Movies';
     };
   }, [Title]);
 

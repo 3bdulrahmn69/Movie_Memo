@@ -8,7 +8,7 @@ const Logo = () => {
         🍿
       </span>
       <h1 className="text-4xl text-white font-semibold md:block hidden">
-        Movie Memo
+        My Watched Movies
       </h1>
     </a>
   );
