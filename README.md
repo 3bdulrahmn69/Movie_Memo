@@ -53,13 +53,13 @@ To get My Watched Movies running locally, follow these simple steps:
 - [React + Vite](https://vitejs.dev) - Frontend Framework
 - [Tailwind CSS](https://tailwindcss.com) - CSS Framework
 - [daisyui](https://daisyui.com) - Tailwind CSS Components
+- [AXIOS](https://axios-http.com) - Promise-based HTTP Client
 - [OMDB API](http://www.omdbapi.com) - Movie Database API
 
 ## Authors
 
 - **Abdulrahman Moussa** - [https://www.3bdulrahmn.tech](https://www.3bdulrahmn.tech)
 - **Jonas Schmedtmann** - [https://github.com/jonasschmedtmann](https://github.com/jonasschmedtmann)
-
 
 ## License
 
@@ -70,6 +70,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Jonas Schmedtmann** - For the inspiration and guidance in building this project.
 - **OMDB API** - For providing a free and easy-to-use movie database API.
 - **Tailwind CSS** - For the beautiful and responsive CSS framework.
+- **AXIOS** - For the promise-based HTTP client.
 - **daisyui** - For the Tailwind CSS components and utilities.
 - **Vite** - For the fast and modern frontend build tool.
 - **React** - For the powerful and flexible frontend library.

@@ -3,11 +3,17 @@ import Movie from './Movie';
 
 const MoviesList = ({ movies, onSelectMovie }) => {
   return (
-    <ul className="overflow-scroll flex flex-col justify-center items-center w-full mt-8">
-      {movies?.map((movie) => (
-        <Movie movie={movie} key={movie.imdbID} onSelectMovie={onSelectMovie} />
-      ))}
-    </ul>
+    <div className="movies__container overflow-scroll py-4">
+      <ul className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+        {movies?.map((movie) => (
+          <Movie
+            movie={movie}
+            key={movie.imdbID}
+            onSelectMovie={onSelectMovie}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 

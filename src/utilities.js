@@ -20,7 +20,6 @@ export default async function getMovies(searchTerm, signal) {
     const response = await api.get('/', { params, signal });
 
     if (response.data.Response === 'True') {
-      console.log(response.data.Search);
       return response.data.Search ?? [];
     } else {
       throw new Error(response.data.Error || 'No movies found');

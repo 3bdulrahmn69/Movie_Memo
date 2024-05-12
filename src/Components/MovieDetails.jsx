@@ -4,6 +4,7 @@ import StarsRaring from './StarsRaring';
 import Loader from './Loader';
 import { getMovieById } from '../utilities';
 import { useKey } from '../Hooks/useKey';
+import CloseBtn from './CloseBtn';
 
 const MovieDetails = ({
   selectedMovieId,
@@ -31,11 +32,16 @@ const MovieDetails = ({
     Poster,
     Runtime,
     imdbRating,
+    Ratings,
     Plot,
     Released,
     Actors,
     Director,
     Genre,
+    Rated,
+    BoxOffice,
+    Awards,
+    Writer,
   } = movie;
 
   const handleAdd = () => {
@@ -46,8 +52,13 @@ const MovieDetails = ({
       Poster,
       imdbRating: Number(imdbRating),
       runtime: Number(Runtime.split(' ').at(0)),
+      Rated,
       userRating,
       countForRatingDecision: countRef.current,
+      BoxOffice,
+      Awards,
+      Writer,
+      Ratings,
     };
 
     onAddToWatched(newWatchedMovie);
@@ -82,7 +93,6 @@ const MovieDetails = ({
   useEffect(() => {
     if (userRating) {
       countRef.current++;
-      console.log(countRef.current);
     }
   }, [userRating]);
 
@@ -93,26 +103,44 @@ const MovieDetails = ({
   }
 
   return (
-    <div className="details">
-      <header>
-        <button className="btn-back" onClick={onCloseMovie}>
-          X
-        </button>
-        <img src={Poster} alt={`${Title} poster`} />
-        <div className="details-overview">
-          <h2>{Title}</h2>
+    <div className="px-4">
+      <CloseBtn func={onCloseMovie} />
+      <header className="flex md:flex-row flex-col gap-1">
+        <figure>
+          <img src={Poster} alt={`${Title} poster`} className="rounded" />
+        </figure>
+        <div className="flex gap-4 flex-col md:mt-8 mt-2">
+          <h2 className="text-2xl font-bold text-white">{Title}</h2>
           <p>
             {Released} &bull; {Runtime}
           </p>
-          <p>{Genre}</p>
+          <p>
+            <strong>Rated:</strong> {Rated}
+          </p>
+          <p>
+            <strong>Genre:</strong> {Genre}
+          </p>
           <p>
             <span>⭐</span>
             {imdbRating} IMDb Rating
           </p>
+          {Ratings && (
+            <p>
+              <strong>Ratings:</strong>
+              {Ratings.map((rating, index) => (
+                <span className='block' key={index}>
+                  🎗️{rating.Source}: {rating.Value}
+                </span>
+              ))}
+            </p>
+          )}
         </div>
       </header>
       <section>
-        <div className="rating">
+        <div className="flex flex-col gap-4 items-center py-4">
+          <p>
+            <em>{Plot}</em>
+          </p>
           {isMovieWatched ? (
             <p>
               your rated is {watchedUserRating}
@@ -126,7 +154,10 @@ const MovieDetails = ({
                 onSetRating={setUserRating}
               />
               {userRating > 0 && (
-                <button className="btn-add" onClick={() => handleAdd(movie)}>
+                <button
+                  className="bg-blue-600 px-4 py-2 hover:bg-blue-700 transition-colors duration-300 rounded text-white"
+                  onClick={() => handleAdd(movie)}
+                >
                   <span role="img">+ </span>
                   <span>Add to Watched</span>
                 </button>
@@ -135,14 +166,22 @@ const MovieDetails = ({
           )}
         </div>
         <p>
-          <em>{Plot}</em>
+          <strong>Actors:</strong> {Actors}
         </p>
         <p>
-          <strong>Actors:</strong> {Actors}
+          <strong>Writer:</strong> {Writer}
         </p>
         <p>
           <strong>Director:</strong> {Director}
         </p>
+        <p>
+          <strong>Awards:</strong> {Awards}
+        </p>
+        {BoxOffice === 'N/A' ? null : (
+          <p>
+            <strong>Box Office:</strong> {BoxOffice}
+          </p>
+        )}
       </section>
     </div>
   );

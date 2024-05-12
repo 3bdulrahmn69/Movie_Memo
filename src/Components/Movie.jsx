@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 const Movie = ({ movie, onSelectMovie }) => {
   return (
     <li
-      className="flex items-center flex-col gap-2 mb-4 px-4 py-2 rounded-lg shadow-lg cursor-pointer w-9/12 hover:scale-105 transition-transform duration-300 ease-in-out"
+      className="relative flex items-center flex-col gap-2 mb-4 px-4 py-2 rounded-lg shadow-lg cursor-pointer border-2 w-full md:w-2/5 xl:w-1/5 hover:scale-105 transition-transform duration-300 ease-in-out animate-slideUp"
       onClick={() => {
         onSelectMovie(movie.imdbID);
       }}
     >
+      <span className="absolute top-0 left-0 bg-cPurple text-white px-4 py-2 rounded-tl-lg rounded-br-lg animate-FadeIn">
+        {movie.Year}
+      </span>
       <figure className="w-64 h-96">
         <img
           className="w-full rounded-lg shadow-md"
@@ -17,9 +20,8 @@ const Movie = ({ movie, onSelectMovie }) => {
           } poster`}
         />
       </figure>
-      <div className="flex items-center text-3xl gap-2">
+      <div className="flex items-center text-3xl">
         <h3 className="font-bold">{movie.Title}</h3>
-        <span>{movie.Year}</span>
       </div>
     </li>
   );

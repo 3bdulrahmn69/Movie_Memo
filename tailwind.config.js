@@ -32,6 +32,9 @@ export default {
         cPurple: '#6741d9',
         cPurpleLight: '#7950f2',
       },
+      boxShadow: {
+        right: '5px 10px 10px 2px rgba(255, 255, 255, 0.3)',
+      },
     },
   },
   plugins: [daisyui],

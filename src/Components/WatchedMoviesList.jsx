@@ -3,7 +3,7 @@ import WatchedMovie from './WatchedMovie';
 
 const WatchedMoviesList = ({ watched, onSelectMovie, onRemoveFromWatched }) => {
   return (
-    <ul className="list list-movies">
+    <ul>
       {watched.map((movie) => (
         <WatchedMovie
           movie={movie}
