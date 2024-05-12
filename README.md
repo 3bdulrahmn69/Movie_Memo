@@ -20,6 +20,12 @@ Before you begin, ensure you have the following installed:
 - Node.js
 - npm (Node Package Manager)
 
+## Demo
+
+You can view a live demo of the application at [https://mywatchedmovies.netlify.app](https://mywatchedmovies.netlify.app).
+
+![screenshot](./src/assets/MyWatchedMovies.png)
+
 ### Installing
 
 To get My Watched Movies running locally, follow these simple steps:
