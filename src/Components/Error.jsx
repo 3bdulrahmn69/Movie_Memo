@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Error = ({ message }) => {
   return (
-    <div className="h-full flex items-center justify-center px-8">
+    <div className="h-screen flex items-center justify-center px-8">
       <div role="alert" className="alert alert-error">
         <svg
           xmlns="http://www.w3.org/2000/svg"

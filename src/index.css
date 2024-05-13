@@ -13,3 +13,8 @@
 .movies__container {
   height: calc(100vh - 108px);
 }
+
+body {
+  background-color: #1a1a1a;
+  color: #c7c7c7;
+}

@@ -10,12 +10,14 @@ const WatchedMovie = ({ movie, onSelectMovie, onRemoveFromWatched }) => {
           onSelectMovie(movie.imdbID);
         }}
       >
-        <figure className="w-36">
+        <figure className="md:w-36 w-16">
           <img src={movie.Poster} alt={`${movie.Title} poster`} />
         </figure>
-        <div className='ml-4'>
-          <h3 className='font-bold mb-4'>{movie.Title}</h3>
-          <div className="flex gap-4">
+        <div className="ml-4">
+          <h3 className="font-bold mb-4 text-xl lg:text-2xl 2xl:text-3xl">
+            {movie.Title}
+          </h3>
+          <div className="flex gap-4 text-xs lg:text-lg 2xl:text-2xl">
             <p>
               <span>⭐️</span>
               <span>{movie.imdbRating}</span>

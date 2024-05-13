@@ -128,7 +128,7 @@ const MovieDetails = ({
             <p>
               <strong>Ratings:</strong>
               {Ratings.map((rating, index) => (
-                <span className='block' key={index}>
+                <span className="block" key={index}>
                   🎗️{rating.Source}: {rating.Value}
                 </span>
               ))}
@@ -136,11 +136,11 @@ const MovieDetails = ({
           )}
         </div>
       </header>
-      <section>
+      <section className='py-2'>
+        <p>
+          <em>{Plot}</em>
+        </p>
         <div className="flex flex-col gap-4 items-center py-4">
-          <p>
-            <em>{Plot}</em>
-          </p>
           {isMovieWatched ? (
             <p>
               your rated is {watchedUserRating}
@@ -174,9 +174,11 @@ const MovieDetails = ({
         <p>
           <strong>Director:</strong> {Director}
         </p>
-        <p>
-          <strong>Awards:</strong> {Awards}
-        </p>
+        {Awards === 'N/A' ? null : (
+          <p>
+            <strong>Awards:</strong> {Awards}
+          </p>
+        )}
         {BoxOffice === 'N/A' ? null : (
           <p>
             <strong>Box Office:</strong> {BoxOffice}

@@ -73,7 +73,10 @@ const App = () => {
         <Box className="mt-4">
           <div className="flex justify-between items-center h-11 shadow-md">
             <CountOfMoviesResults number={movies.length} />
-            <div className="tooltip tooltip-left animate-FadeInRev" data-tip="My List">
+            <div
+              className="tooltip tooltip-left animate-FadeInRev"
+              data-tip="My List"
+            >
               <button
                 className="text-2xl text-white bg-yellow-400 p-2 rounded-lg hover:bg-yellow-500 transition-colors duration-300 ease-in-out"
                 onClick={() => setShowWatchedList(true)}
@@ -85,9 +88,11 @@ const App = () => {
           </div>
           {movies.length === 0 && !isLoading && !error && (
             <div className="main flex flex-col justify-center items-center animate-slideUp">
-              <p className="text-2xl text-center mb-4 italic">
-                Start searching for movie by click on the button below or press
-                Enter
+              <p className="text-xs md:text-xl xl:text-2xl text-center mb-4">
+                <em>
+                  Start searching for movie by click on the button below or
+                  press Enter
+                </em>
               </p>
               <ClickToSearch focusInput={handleFocusInput} />
             </div>
@@ -101,7 +106,7 @@ const App = () => {
           )}
         </Box>
         {selectedMovieId && (
-          <Box className="animate-FadeInRev absolute top-0 right-0 z-20 bg-black/90 shadow-righ md:w-3/6 w-11/12 h-screen overflow-scroll">
+          <Box className="animate-FadeInRev absolute top-0 right-0 z-20 bg-black/90 shadow-right md:w-4/6 w-11/12 h-screen overflow-y-scroll overflow-x-hidden">
             <MovieDetails
               selectedMovieId={selectedMovieId}
               onCloseMovie={handleMovieClose}
@@ -111,7 +116,7 @@ const App = () => {
           </Box>
         )}
         {showWatchedList && (
-          <Box className="animate-FadeInRev absolute top-0 right-0 z-10 bg-black/90 shadow-right md:w-3/6 w-11/12 h-screen overflow-scroll">
+          <Box className="animate-FadeInRev absolute top-0 right-0 z-10 bg-black/90 shadow-right md:w-4/6 w-11/12 h-screen overflow-y-scroll overflow-x-hidden">
             <WatchedSummary
               watched={watched}
               setShowWatchedList={setShowWatchedList}
