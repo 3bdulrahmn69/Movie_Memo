@@ -103,8 +103,6 @@ const MovieDetails = ({
     return <Loader />;
   }
 
-  console.log(movie);
-
   return (
     <div className="px-4">
       <CloseBtn func={onCloseMovie} />
