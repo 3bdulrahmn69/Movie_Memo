@@ -18,7 +18,7 @@ const WatchedSummary = ({ watched, setShowWatchedList }) => {
       <CloseBtn func={setShowWatchedList} />
       <h2 className="font-bold mb-2">Movies you have watched</h2>
       <div className="flex gap-3 text-xs">
-        <p className="tooltip tooltip-bottom" data-tip="movies watched">
+        <p className="tooltip tooltip-bottom" data-tip="watched">
           <span>#️⃣</span>
           <span>{watched.length} movies</span>
         </p>

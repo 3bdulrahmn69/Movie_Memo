@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import noMovie from '../assets/noMovie.webp';
 
 const Movie = ({ movie, onSelectMovie }) => {
   return (
@@ -12,13 +13,21 @@ const Movie = ({ movie, onSelectMovie }) => {
         {movie.Year}
       </span>
       <figure className="w-64 h-96">
-        <img
-          className="w-full rounded-lg shadow-md"
-          src={movie.Poster}
-          alt={`${
-            movie.Title.slice(0, 10) + (movie.Title.length > 10 ? '...' : '')
-          } poster`}
-        />
+        {movie.Poster === 'N/A' ? (
+          <img
+            className="w-full rounded-lg shadow-md"
+            src={noMovie}
+            alt="Placeholder poster"
+          />
+        ) : (
+          <img
+            className="w-full rounded-lg shadow-md"
+            src={movie.Poster}
+            alt={`${
+              movie.Title.slice(0, 10) + (movie.Title.length > 10 ? '...' : '')
+            } poster`}
+          />
+        )}
       </figure>
       <div className="flex items-center text-3xl">
         <h3 className="font-bold">{movie.Title}</h3>

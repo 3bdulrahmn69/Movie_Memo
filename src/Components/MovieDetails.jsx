@@ -5,6 +5,7 @@ import Loader from './Loader';
 import { getMovieById } from '../utilities';
 import { useKey } from '../Hooks/useKey';
 import CloseBtn from './CloseBtn';
+import noMovie from '../assets/noMovie.webp';
 
 const MovieDetails = ({
   selectedMovieId,
@@ -102,29 +103,43 @@ const MovieDetails = ({
     return <Loader />;
   }
 
+  console.log(movie);
+
   return (
     <div className="px-4">
       <CloseBtn func={onCloseMovie} />
-      <header className="flex md:flex-row flex-col gap-1">
-        <figure>
-          <img src={Poster} alt={`${Title} poster`} className="rounded" />
+      <header className="flex md:flex-row flex-col gap-4">
+        <figure className="w-64">
+          {Poster === 'N/A' ? (
+            <img src={noMovie} alt="Placeholder poster" className="rounded" />
+          ) : (
+            <img src={Poster} alt={`${Title} poster`} className="rounded" />
+          )}
         </figure>
         <div className="flex gap-4 flex-col md:mt-8 mt-2">
           <h2 className="text-2xl font-bold text-white">{Title}</h2>
-          <p>
-            {Released} &bull; {Runtime}
-          </p>
-          <p>
-            <strong>Rated:</strong> {Rated}
-          </p>
-          <p>
-            <strong>Genre:</strong> {Genre}
-          </p>
-          <p>
-            <span>⭐</span>
-            {imdbRating} IMDb Rating
-          </p>
-          {Ratings && (
+          {Runtime === 'N/A' ? null : (
+            <p>
+              {Released} &bull; {Runtime}
+            </p>
+          )}
+          {Rated === 'N/A' ? null : (
+            <p>
+              <strong>Rated:</strong> {Rated}
+            </p>
+          )}
+          {Genre === 'N/A' ? null : (
+            <p>
+              <strong>Genre:</strong> {Genre}
+            </p>
+          )}
+          {imdbRating === 'N/A' ? null : (
+            <p>
+              <span>⭐</span>
+              {imdbRating} IMDb Rating
+            </p>
+          )}
+          {Ratings && Ratings.length > 0 && (
             <p>
               <strong>Ratings:</strong>
               {Ratings.map((rating, index) => (
@@ -136,7 +151,7 @@ const MovieDetails = ({
           )}
         </div>
       </header>
-      <section className='py-2'>
+      <section className="py-2">
         <p>
           <em>{Plot}</em>
         </p>
@@ -165,21 +180,27 @@ const MovieDetails = ({
             </>
           )}
         </div>
-        <p>
-          <strong>Actors:</strong> {Actors}
-        </p>
-        <p>
-          <strong>Writer:</strong> {Writer}
-        </p>
-        <p>
-          <strong>Director:</strong> {Director}
-        </p>
+        {Actors === 'N/A' ? null : (
+          <p>
+            <strong>Actors:</strong> {Actors}
+          </p>
+        )}
+        {Writer === 'N/A' ? null : (
+          <p>
+            <strong>Writer:</strong> {Writer}
+          </p>
+        )}
+        {Director === 'N/A' ? null : (
+          <p>
+            <strong>Director:</strong> {Director}
+          </p>
+        )}
         {Awards === 'N/A' ? null : (
           <p>
             <strong>Awards:</strong> {Awards}
           </p>
         )}
-        {BoxOffice === 'N/A' ? null : (
+        {BoxOffice === 'N/A' || !BoxOffice ? null : (
           <p>
             <strong>Box Office:</strong> {BoxOffice}
           </p>
