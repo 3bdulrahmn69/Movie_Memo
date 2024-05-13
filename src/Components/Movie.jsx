@@ -4,7 +4,7 @@ import noMovie from '../assets/noMovie.webp';
 const Movie = ({ movie, onSelectMovie }) => {
   return (
     <li
-      className="relative flex items-center flex-col gap-2 mb-4 px-4 py-2 rounded-lg shadow-lg cursor-pointer border-2 w-full md:w-2/5 xl:w-1/5 hover:scale-105 transition-transform duration-300 ease-in-out animate-slideUp"
+      className="relative flex items-center flex-col gap-2 mb-4 px-4 py-2 rounded-lg shadow-lg cursor-pointer border-2 w-full md:w-2/5 xl:w-1/5 md:hover:scale-105 transition-transform duration-300 ease-in-out animate-slideUp"
       onClick={() => {
         onSelectMovie(movie.imdbID);
       }}
