@@ -51,7 +51,9 @@ const App = () => {
   };
 
   const handleShowWatchedListOpen = () => {
-    setShowWatchedList(true);
+    if (document.activeElement !== inputRef.current) {
+      setShowWatchedList(true);
+    }
   };
 
   const handleShowWatchedListClose = () => {
